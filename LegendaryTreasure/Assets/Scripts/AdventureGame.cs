@@ -6,30 +6,22 @@ using TMPro;
 
 public class AdventureGame : MonoBehaviour
 {
-    //
     PirateStats pirate;
     string strName, strValue;
+
     [SerializeField] TextMeshProUGUI statNameText;
     [SerializeField] TextMeshProUGUI statValueText;
-
-    bool flagNextState;
-    //[SerializeField] Text textComponent;
-    //[SerializeField] State startingState;
-
-    //[SerializeField] Text storyText;
     [SerializeField] TextMeshProUGUI storyText;
     [SerializeField] State startingState;
     [SerializeField] State endingState;
     [SerializeField] State[] defeatConditions;
 
-    //
     Sprite nextImage;
     GameObject imageTutaj;
-    //
     State state;
 
     public List<State> myStates;
-
+    bool flagNextState;
     int count;
     bool end;
 
@@ -39,10 +31,8 @@ public class AdventureGame : MonoBehaviour
         pirate = new PirateStats();
         flagNextState = true;
         end = true;
-        //
         //nextImage = state.GetStateImage();
         imageTutaj = GameObject.Find("Canvas/Panel/Image");
-        //
         state = startingState;
         storyText.text = state.GetStateStory();
     }
@@ -73,7 +63,6 @@ public class AdventureGame : MonoBehaviour
                     Debug.Log("huhufhausfhas");
                 }
                 pirate.pirateStatistics[nextStat[i].nameOfStat] += nextStat[i].valueOfStat; //1;
-                //Debug.Log(nextStat[i].strStat + " - " + nextStat[i].intStat); //odczyt danych z wlasnej struktury
             }
             flagNextState = false;
         }
@@ -122,7 +111,6 @@ public class AdventureGame : MonoBehaviour
         //
         var setMe = imageTutaj.GetComponent<Image>();
         setMe.sprite = nextImage;
-        //
     }
 
 
@@ -142,18 +130,14 @@ public class AdventureGame : MonoBehaviour
                 strValue += item.Value + "%\n";
                 state = defeatConditions[i];
                 storyText.text = state.GetStateStory();
-                //var
                 nextImage = state.GetStateImage();
-                //
                 GetComponent<Image>().sprite = nextImage;
             }
             if(item.Value >= 100)
             {
                 state = defeatConditions[i+3];
                 storyText.text = state.GetStateStory();
-                //var
                 nextImage = state.GetStateImage();
-                //
                 GetComponent<Image>().sprite = nextImage;
             }
             i++;

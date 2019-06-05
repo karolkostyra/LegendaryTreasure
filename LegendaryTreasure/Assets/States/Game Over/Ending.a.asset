@@ -17,5 +17,5 @@ MonoBehaviour:
     treasure about which only legends preached. You've never seen so many chests full
     of gold coins and other trinkets.\r\n\r\n[You win!]"
   nextStates: []
-  storyImage: {fileID: 21300000, guid: 012376d9ecb211841a0307ffd6f6bb85, type: 3}
+  storyImage: {fileID: 21300000, guid: 2a43ead713efe7e4d9e0ff6dd11ee140, type: 3}
   dataOfStats: []
