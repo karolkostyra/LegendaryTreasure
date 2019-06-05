@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b912f27bec8429341989d63156ad1925, type: 3}
+  m_Name: Health
+  m_EditorClassIdentifier: 
+  storyText: "Your body is on the verge of endurance. Neither you and any of your
+    pirates are able to continue this journey. You are exhausted and you feel that
+    you are slowly dying...\r\n\r\n[The end]"
+  nextStates: []
+  storyImage: {fileID: 21300000, guid: f0d900e414f8845449ea436fbf09463b, type: 3}
+  dataOfStats: []

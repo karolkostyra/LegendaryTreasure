@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b912f27bec8429341989d63156ad1925, type: 3}
+  m_Name: 001.
+  m_EditorClassIdentifier: 
+  storyText: "Food supplies probably began to spoil. They give off a very strange
+    smell. In addition, some of them have slightly changed color. Unfortunately, nobody
+    knows what's really going on with them ...\r\n\r\n\r\nPress:\r\n1) Throw out the
+    spoiled supplies\r\n2) Don't worry about this"
+  nextStates:
+  - {fileID: 11400000, guid: f63760774ee0b6e40a6936716b053069, type: 2}
+  - {fileID: 11400000, guid: 0f7c64275070d4b49918eca5d4175b24, type: 2}
+  storyImage: {fileID: 21300000, guid: e56c355b3d4a6bd43af695c3d58fbd22, type: 3}
+  dataOfStats:
+  - nameOfStat: Food
+    valueOfStat: 0
+  - nameOfStat: Sanity
+    valueOfStat: 0
+  - nameOfStat: Health
+    valueOfStat: 0
+  - nameOfStat: Gold
+    valueOfStat: 0

@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b912f27bec8429341989d63156ad1925, type: 3}
+  m_Name: 002.
+  m_EditorClassIdentifier: 
+  storyText: "One of your pirates saw a small cargo ship on the horizon.\r\n\r\n\r\nPress:\r\n1)
+    Attack and loot the cargo ship\r\n2) Try to trade with them\r\n3) Don't pay attention
+    to them and continue your adventure"
+  nextStates:
+  - {fileID: 11400000, guid: b47c6b0ba6e21e54fa92acd710fe6891, type: 2}
+  - {fileID: 11400000, guid: de7f0e68f8646a74f806eae15f329bd2, type: 2}
+  - {fileID: 11400000, guid: d9568a20262ab0a46bf1e7b6e04ed100, type: 2}
+  storyImage: {fileID: 0}
+  dataOfStats:
+  - nameOfStat: Food
+    valueOfStat: 0
+  - nameOfStat: Sanity
+    valueOfStat: 0
+  - nameOfStat: Health
+    valueOfStat: 0
+  - nameOfStat: Gold
+    valueOfStat: 0

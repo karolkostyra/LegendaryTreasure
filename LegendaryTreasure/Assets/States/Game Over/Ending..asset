@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b912f27bec8429341989d63156ad1925, type: 3}
+  m_Name: Ending.
+  m_EditorClassIdentifier: 
+  storyText: "On the horizon you can see an island that isn't on any map, but know
+    well that it was the place where the legend was talking about. However, you still
+    keep calm, because you don't know what to expect.\r\n\r\n\r\nPress:\r\n1) You
+    decide to sail to the island and look for the legendary treasure\r\n2) You don't
+    believe your eyes and you don't have the courage to go to the island"
+  nextStates:
+  - {fileID: 11400000, guid: b37b4f9afecd96b408b236fe94589ddf, type: 2}
+  - {fileID: 11400000, guid: 89b0f990eb8094d42846cbffadedbb97, type: 2}
+  storyImage: {fileID: 21300000, guid: 9599fabe470c2cb409104827006c4128, type: 3}
+  dataOfStats: []

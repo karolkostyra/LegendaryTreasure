@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b912f27bec8429341989d63156ad1925, type: 3}
+  m_Name: 004.b
+  m_EditorClassIdentifier: 
+  storyText: "After a few days you still haven't managed to replenish your drinking
+    water supplies, and you are very thirsty.\r\n\n{Food:  0%   Sanity:  -25%   Health:
+    \ -25%   Gold:  0%}\n\n\nPress 'space' to continue..."
+  nextStates: []
+  storyImage: {fileID: 0}
+  dataOfStats:
+  - nameOfStat: Food
+    valueOfStat: 0
+  - nameOfStat: Sanity
+    valueOfStat: -25
+  - nameOfStat: Health
+    valueOfStat: -25
+  - nameOfStat: Gold
+    valueOfStat: 0

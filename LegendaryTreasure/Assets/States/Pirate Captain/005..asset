@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b912f27bec8429341989d63156ad1925, type: 3}
+  m_Name: 005.
+  m_EditorClassIdentifier: 
+  storyText: "One of your men told you that the ship started to leak slightly. It
+    is nothing dangerous, but this water first of all flooding the warehouse of food!\r\n\r\n\nPress:\n1)
+    First give a order to moved supplies to a dry place\r\n2) First give the order
+    to repair the leak on the ship "
+  nextStates:
+  - {fileID: 11400000, guid: cbb4a03eb8d0d634baa6a9e345333ba7, type: 2}
+  - {fileID: 11400000, guid: a1b83d373eff4804e8bb029d8896db41, type: 2}
+  storyImage: {fileID: 0}
+  dataOfStats:
+  - nameOfStat: Food
+    valueOfStat: 0
+  - nameOfStat: Sanity
+    valueOfStat: 0
+  - nameOfStat: Health
+    valueOfStat: 0
+  - nameOfStat: Gold
+    valueOfStat: 0
