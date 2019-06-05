@@ -19,7 +19,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b47c6b0ba6e21e54fa92acd710fe6891, type: 2}
   - {fileID: 11400000, guid: de7f0e68f8646a74f806eae15f329bd2, type: 2}
   - {fileID: 11400000, guid: d9568a20262ab0a46bf1e7b6e04ed100, type: 2}
-  storyImage: {fileID: 0}
+  storyImage: {fileID: 21300000, guid: cafa48fc8e1a945479b460d10ba2cf12, type: 3}
   dataOfStats:
   - nameOfStat: Food
     valueOfStat: 0
