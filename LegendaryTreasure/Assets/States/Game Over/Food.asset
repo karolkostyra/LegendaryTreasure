@@ -17,5 +17,5 @@ MonoBehaviour:
     any land on the horizon. You feel that it won't take too long ...\r\n\r\n[The
     end]"
   nextStates: []
-  storyImage: {fileID: 21300000, guid: f0d900e414f8845449ea436fbf09463b, type: 3}
+  storyImage: {fileID: 21300000, guid: 9943c259a5c066b48bea44265f21e38d, type: 3}
   dataOfStats: []

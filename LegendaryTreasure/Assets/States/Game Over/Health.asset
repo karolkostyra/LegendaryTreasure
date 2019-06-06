@@ -16,5 +16,5 @@ MonoBehaviour:
     pirates are able to continue this journey. You are exhausted and you feel that
     you are slowly dying...\r\n\r\n[The end]"
   nextStates: []
-  storyImage: {fileID: 21300000, guid: f0d900e414f8845449ea436fbf09463b, type: 3}
+  storyImage: {fileID: 21300000, guid: 579e56288bc734140bff586bca0c176c, type: 3}
   dataOfStats: []

@@ -11,7 +11,7 @@ public class LoadScene : MonoBehaviour
 
     public void QuitGame()
     {
-        Debug.Log("QUIT!");
+        //Debug.Log("QUIT!");
         Application.Quit();
     }
 }

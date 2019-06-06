@@ -17,5 +17,5 @@ MonoBehaviour:
     and others die because of an unknown disease, because they ate something of this
     poisoned food."
   nextStates: []
-  storyImage: {fileID: 21300000, guid: f0d900e414f8845449ea436fbf09463b, type: 3}
+  storyImage: {fileID: 21300000, guid: 9b8f8a3a66b9b3e4abd2ebc8db98229b, type: 3}
   dataOfStats: []

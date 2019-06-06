@@ -13,11 +13,12 @@ public class AdventureGame : MonoBehaviour
     [SerializeField] TextMeshProUGUI statValueText;
     [SerializeField] TextMeshProUGUI storyText;
     [SerializeField] State startingState;
+    //[SerializeField] State instructionState;
     [SerializeField] State endingState;
     [SerializeField] State[] defeatConditions;
 
     Sprite nextImage;
-    GameObject imageTutaj;
+    GameObject imageFinder;
     State state;
 
     public List<State> myStates;
@@ -30,9 +31,8 @@ public class AdventureGame : MonoBehaviour
     {
         pirate = new PirateStats();
         flagNextState = true;
-        end = true;
-        //nextImage = state.GetStateImage();
-        imageTutaj = GameObject.Find("Canvas/Panel/Image");
+        end = false;
+        imageFinder = GameObject.Find("Canvas/Panel/Image");
         state = startingState;
         storyText.text = state.GetStateStory();
     }
@@ -49,7 +49,6 @@ public class AdventureGame : MonoBehaviour
     private void ManageState()
     {
         var nextStates = state.GetNextStates();
-        //var nextImage = state.GetStateImage();
         count = myStates.Count;
 
 
@@ -58,11 +57,7 @@ public class AdventureGame : MonoBehaviour
         {
             for (int i = 0; i < nextStat.Length; i++)
             {
-                if ((pirate.pirateStatistics[nextStat[i].nameOfStat] + nextStat[i].valueOfStat) >= 100)
-                {
-                    Debug.Log("huhufhausfhas");
-                }
-                pirate.pirateStatistics[nextStat[i].nameOfStat] += nextStat[i].valueOfStat; //1;
+                pirate.pirateStatistics[nextStat[i].nameOfStat] += nextStat[i].valueOfStat;
             }
             flagNextState = false;
         }
@@ -77,14 +72,6 @@ public class AdventureGame : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha0) & count > 0)
-        {
-            state = myStates[UnityEngine.Random.Range(0, count)];
-            myStates.Remove(state);
-
-            nextImage = state.GetStateImage();
-            GetComponent<Image>().sprite = nextImage;
-        }
 
         if(Input.GetKeyDown(KeyCode.Space))
         {
@@ -92,25 +79,18 @@ public class AdventureGame : MonoBehaviour
             {
                 state = myStates[UnityEngine.Random.Range(0, count)];
                 myStates.Remove(state);
-
-                //nextImage = state.GetStateImage();
-                //GetComponent<Image>().sprite = nextImage;
-                //flagNextState = true;
             }
-            if(count == 0 & end)
+
+            if(count == 0 & !end)
             {
                 state = endingState;
-                end = false;
+                end = true;
             }
-            
         }
 
-
         storyText.text = state.GetStateStory();
-        //GetComponent<Image>().sprite = nextImage;
-        //
-        var setMe = imageTutaj.GetComponent<Image>();
-        setMe.sprite = nextImage;
+        var setImage = imageFinder.GetComponent<Image>();
+        setImage.sprite = nextImage;
     }
 
 
@@ -130,15 +110,11 @@ public class AdventureGame : MonoBehaviour
                 strValue += item.Value + "%\n";
                 state = defeatConditions[i];
                 storyText.text = state.GetStateStory();
-                nextImage = state.GetStateImage();
-                GetComponent<Image>().sprite = nextImage;
             }
             if(item.Value >= 100)
             {
                 state = defeatConditions[i+3];
                 storyText.text = state.GetStateStory();
-                nextImage = state.GetStateImage();
-                GetComponent<Image>().sprite = nextImage;
             }
             i++;
         }
