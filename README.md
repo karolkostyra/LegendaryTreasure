@@ -1,6 +1,7 @@
 # LegendaryTreasure
-Simple project of text RPG game of own idea.
-In this game you should make decisions like that so that the statistics do not drop below 0, not exceed 100% and helped you to complete the purpose of your character.
+Simple project of text RPG game of own idea. Theme are pirate adventures.
+
+This game is based of make decisions. From your choices depend if you will win. You should primarily complete the purpose of your character but at the same time watching your statistics like that to maintain them between 0 and 100%.
 
 This is only prototype, not a complete game. Nevertheless it is playable and contains several stories with images. One of characters is locked but in the near future I want create more content for this game. 
 
