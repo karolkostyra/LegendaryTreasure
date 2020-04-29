@@ -5,7 +5,7 @@
 public class State : ScriptableObject
 {
     [TextArea(10, 14)] [SerializeField] string storyText;
-    [TextArea(5, 7)] [SerializeField] string[] choicesText;
+    [TextArea(3, 5)] [SerializeField] string[] choicesText;
     [SerializeField] public State[] nextStates;
     public Sprite storyImage;
 

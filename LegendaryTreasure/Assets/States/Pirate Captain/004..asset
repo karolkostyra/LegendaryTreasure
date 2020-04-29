@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b912f27bec8429341989d63156ad1925, type: 3}
   m_Name: 004.
   m_EditorClassIdentifier: 
-  storyText: "The drinking water resources have been completely depleted.\r\n\r\n\r\nPress:\r\n1)
-    Try to sail to the nearest port to replenish your supplies\r\n2) Continue the
-    adventure"
+  storyText: "The drinking water resources have been completely depleted.\r\n"
+  choicesText:
+  - "1) Try to sail to the nearest port to replenish your supplies\r."
+  - 2) Continue the adventure.
   nextStates:
   - {fileID: 11400000, guid: cb898c033b66d4c4a8e0bbe426ba4680, type: 2}
   - {fileID: 11400000, guid: e17c9227ad39b654c9ec34a0ffd97df9, type: 2}
@@ -28,3 +29,5 @@ MonoBehaviour:
     valueOfStat: 0
   - nameOfStat: Gold
     valueOfStat: 0
+  spaceIsActive: 0
+  introduction: 0

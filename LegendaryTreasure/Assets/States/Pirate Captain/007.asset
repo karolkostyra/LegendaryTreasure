@@ -14,16 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   storyText: 'One crew member gave you information about a small island on the horizon.
 
-
-
-    Press:
-
-    1) You decided to get closer to the island.
-
-    2) You don''t pay attention for it and keep going travel.'
+'
+  choicesText:
+  - 1) You decided to get closer to the island.
+  - 2) You don't pay attention for it and keep going travel.
   nextStates:
   - {fileID: 11400000, guid: fe4038e132983ae409dbeb267fdebec3, type: 2}
   - {fileID: 11400000, guid: 49b6c2c8c8eac974c9e6598f6c5253c1, type: 2}
   storyImage: {fileID: 21300000, guid: f032b2a428b9a004e8e2ea6b5e21baf2, type: 3}
   dataOfStats: []
   spaceIsActive: 0
+  introduction: 0

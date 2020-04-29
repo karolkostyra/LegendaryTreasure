@@ -7,14 +7,21 @@ using TMPro;
 public class SetupStoryField : MonoBehaviour
 {
     private State state;
-    [SerializeField] AdventureGame currentState;
+    [SerializeField] AdventureGame adventureGame;
     [SerializeField] GameObject storyText;
     [SerializeField] GameObject introText;
 
+    //BUTTONS - max 3 choices for state
+    [SerializeField] GameObject[] buttons;
+    [SerializeField] GameObject button_1;
+    [SerializeField] GameObject button_2;
+    [SerializeField] GameObject button_3;
+
     private RectTransform storyRectTransform;
     private Vector2 storySizeDelta;
-    private AdventureGame previousCurrentState;
-    private bool flag;
+    private State currentState;
+    private State previousCurrentState;
+
 
     private void Start() //-153 / 434
     {
@@ -23,12 +30,15 @@ public class SetupStoryField : MonoBehaviour
 
         storyRectTransform = storyText.GetComponent<RectTransform>();
         storySizeDelta = storyRectTransform.sizeDelta;
-        flag = true;
+
+        previousCurrentState = adventureGame.GetCurrentState();
+        
     }
     
     private void Update()
     {
-        if (currentState.GetCurrentState().GetIntroductionVar())
+        currentState = adventureGame.GetCurrentState();
+        if (currentState.GetIntroductionVar())
         {
             storyText.SetActive(false);
             introText.SetActive(true);
@@ -39,13 +49,19 @@ public class SetupStoryField : MonoBehaviour
             storyText.SetActive(true);
         }
 
+        if(previousCurrentState != currentState)
+        {
+            Debug.Log("BYLA ZMIANA");
+            ActiveButtons();
+        }
+
         if (Input.GetKeyDown(KeyCode.Q))
         {
             storyRectTransform = storyText.GetComponent<RectTransform>();
             storySizeDelta = storyRectTransform.sizeDelta;
             //Debug.Log(currentState.GetCurrentState().GetNumberOfChoices());
             storySizeDelta = new Vector2(storySizeDelta.x, 200);
-            CreateButtons(currentState.GetCurrentState().GetNumberOfChoices());
+            CreateButtons(currentState.GetNumberOfChoices());
         }
     }
 
@@ -64,5 +80,41 @@ public class SetupStoryField : MonoBehaviour
             //button.GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 0, 10);
             button.SetActive(true);
         } 
+    }
+
+    private void ActiveButtons()
+    {
+        DeactivateButtons();
+        previousCurrentState = currentState;
+        switch (currentState.GetNumberOfChoices())
+        {
+            case 1:
+                Debug.Log("1");
+                ActiveButtons2(1);
+                break;
+            case 2:
+                Debug.Log("2");
+                ActiveButtons2(2);
+                break;
+            case 3:
+                Debug.Log("3");
+                ActiveButtons2(3);
+                break;
+        }
+    }
+
+    private void ActiveButtons2(int value)
+    {
+        for(int i=0; i<value; i++)
+        {
+            buttons[i].SetActive(true);
+        }
+    }
+
+    private void DeactivateButtons()
+    {
+        buttons[0].SetActive(false);
+        buttons[1].SetActive(false);
+        buttons[2].SetActive(false);
     }
 }

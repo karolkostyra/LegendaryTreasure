@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: 005.
   m_EditorClassIdentifier: 
   storyText: "One of your men told you that the ship started to leak slightly. It
-    is nothing dangerous, but this water first of all flooding the warehouse of food!\r\n\r\n\nPress:\n1)
-    First give a order to moved supplies to a dry place\r\n2) First give the order
-    to repair the leak and get rid of water from ship "
+    is nothing dangerous, but this water first of all flooding the warehouse of food!\r"
+  choicesText:
+  - "1) First give a order to moved supplies to a dry place\r."
+  - 2) First give the order to repair the leak and get rid of water from ship.
   nextStates:
   - {fileID: 11400000, guid: cbb4a03eb8d0d634baa6a9e345333ba7, type: 2}
   - {fileID: 11400000, guid: a1b83d373eff4804e8bb029d8896db41, type: 2}
@@ -29,3 +30,5 @@ MonoBehaviour:
     valueOfStat: 0
   - nameOfStat: Gold
     valueOfStat: 0
+  spaceIsActive: 0
+  introduction: 0

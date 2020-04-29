@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   storyText: "Several crew members poisoned themselves with food. You can see that
     they do not feel well and will need a few days of rest.\r\n\n{Food: -5%   Sanity:
-    -15%   Health: -10%   Gold:  0%}\n\n\nPress 'space' to continue..."
+    -15%   Health: -10%   Gold:  0%}"
+  choicesText:
+  - Press 'space' to continue...
   nextStates: []
   storyImage: {fileID: 21300000, guid: 9f2891baae87d6f40bf5b63fdee92878, type: 3}
   dataOfStats:
@@ -27,3 +29,4 @@ MonoBehaviour:
   - nameOfStat: Gold
     valueOfStat: 0
   spaceIsActive: 1
+  introduction: 0

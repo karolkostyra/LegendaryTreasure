@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   storyText: "The cargo ship crew saw that you don't have bad intentions against them.
     You bought some food and drinking water for a few gold coins.\r\n\r\n{Food: +15%
-    \  Sanity:  +5%   Health:  0%   Gold: -15%}\n\n\nPress 'space' to continue..."
+    \  Sanity:  +5%   Health:  0%   Gold: -15%}"
+  choicesText:
+  - Press 'space' to continue...
   nextStates: []
   storyImage: {fileID: 0}
   dataOfStats:
@@ -27,3 +29,4 @@ MonoBehaviour:
   - nameOfStat: Gold
     valueOfStat: -15
   spaceIsActive: 1
+  introduction: 0

@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b912f27bec8429341989d63156ad1925, type: 3}
   m_Name: 003.
   m_EditorClassIdentifier: 
-  storyText: "A few pirates on the ship drank too much rum so began to struggling
-    and argue among themselves...\n\r\n\r\nPress:\r\n1) Don't react. \r\n2) Separate
-    them."
+  storyText: 'A few pirates on the ship drank too much rum so began to struggling
+    and argue among themselves...
+
+'
+  choicesText:
+  - 1) Don't react.
+  - 2) Separate them.
   nextStates:
   - {fileID: 11400000, guid: d79c29d5750736049bad269668786d16, type: 2}
   - {fileID: 11400000, guid: 678cfe8728456b64da63b3421f51419e, type: 2}
@@ -28,3 +32,5 @@ MonoBehaviour:
     valueOfStat: 0
   - nameOfStat: Gold
     valueOfStat: 0
+  spaceIsActive: 0
+  introduction: 0

@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   storyText: "Because of your quick reaction, very little water got on the ship, but
     a lot of food is wet and unfit for consumption.\r\n\r\n{Food:  -10%   Sanity:
-    \ +10%   Health:  0%   Gold:  0%}\n\n\nPress 'space' to continue..."
+    \ +10%   Health:  0%   Gold:  0%}"
+  choicesText:
+  - Press 'space' to continue...
   nextStates: []
   storyImage: {fileID: 21300000, guid: d13f081ad1902b54fa01cfd07e03f289, type: 3}
   dataOfStats:
@@ -27,3 +29,4 @@ MonoBehaviour:
   - nameOfStat: Gold
     valueOfStat: 0
   spaceIsActive: 1
+  introduction: 0

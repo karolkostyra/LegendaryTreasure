@@ -12,17 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b912f27bec8429341989d63156ad1925, type: 3}
   m_Name: 007.a
   m_EditorClassIdentifier: 
-  storyText: 'During approaching the island, you noticed a strange trail on the ground
+  storyText: During approaching the island, you noticed a strange trail on the ground
     leading to the rocks.
-
-
-
-    Press:
-
-    1) Ship with your crew are reaching the island.
-
-    2) You changed your mind and decide turn back to further keep looking for the
-    legendary treasure.'
+  choicesText:
+  - 1) Ship with your crew are reaching the island.
+  - 2) You changed your mind and decide turn back to further keep looking for the
+    legendary treasure.
   nextStates:
   - {fileID: 11400000, guid: c47839a1e72f4ab4a9fa9729d16aa6ce, type: 2}
   - {fileID: 11400000, guid: a7c2b74dc0c742549b28e181d639002d, type: 2}
@@ -37,3 +32,4 @@ MonoBehaviour:
   - nameOfStat: Gold
     valueOfStat: 0
   spaceIsActive: 0
+  introduction: 0

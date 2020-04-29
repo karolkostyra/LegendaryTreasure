@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   storyText: "The pirates who attacked you willingly took away your gold and the food
     you offered them and sailed away.\r\n\r\n{Food:  -15%   Sanity:  5%   Health:
-    \ 0%   Gold:  -20%}\n\n\nPress 'space' to continue..."
+    \ 0%   Gold:  -20%}"
+  choicesText:
+  - Press 'space' to continue...
   nextStates: []
   storyImage: {fileID: 21300000, guid: dd1e02174f71f064d90eda9d0b3e9acb, type: 3}
   dataOfStats:
@@ -27,3 +29,4 @@ MonoBehaviour:
   - nameOfStat: Gold
     valueOfStat: -20
   spaceIsActive: 1
+  introduction: 0

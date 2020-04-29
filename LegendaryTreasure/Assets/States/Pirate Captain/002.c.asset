@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: 002.c
   m_EditorClassIdentifier: 
   storyText: "You continue journey...\r\n\r\n{Food:  -5%   Sanity:  +5%   Health:
-    \ 0%   Gold:  0%}\n\n\nPress 'space' to continue..."
+    \ 0%   Gold:  0%}"
+  choicesText:
+  - Press 'space' to continue...
   nextStates: []
   storyImage: {fileID: 0}
   dataOfStats:
@@ -26,3 +28,4 @@ MonoBehaviour:
   - nameOfStat: Gold
     valueOfStat: 0
   spaceIsActive: 1
+  introduction: 0

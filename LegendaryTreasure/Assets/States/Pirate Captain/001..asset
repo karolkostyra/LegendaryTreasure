@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   storyText: "Food supplies probably began to spoil. They give off a very strange
     smell. In addition, some of them have slightly changed color. Unfortunately, nobody
-    knows what's really going on with them ...\r\n\r\n\r\nPress:\r\n1) Throw out the
-    spoiled supplies\r\n2) Don't worry about this"
+    knows what's really going on with them ...\r"
+  choicesText:
+  - "1) Throw out the spoiled supplies\r."
+  - 2) Don't worry about this.
   nextStates:
   - {fileID: 11400000, guid: f63760774ee0b6e40a6936716b053069, type: 2}
   - {fileID: 11400000, guid: 0f7c64275070d4b49918eca5d4175b24, type: 2}
@@ -29,3 +31,5 @@ MonoBehaviour:
     valueOfStat: 0
   - nameOfStat: Gold
     valueOfStat: 0
+  spaceIsActive: 0
+  introduction: 0
