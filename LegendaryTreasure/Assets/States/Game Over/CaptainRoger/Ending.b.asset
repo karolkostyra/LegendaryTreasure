@@ -20,3 +20,4 @@ MonoBehaviour:
   nextStates: []
   storyImage: {fileID: 21300000, guid: ff0a985f16ee0e94db5ac2fdc8f72347, type: 3}
   dataOfStats: []
+  spaceIsActive: 0

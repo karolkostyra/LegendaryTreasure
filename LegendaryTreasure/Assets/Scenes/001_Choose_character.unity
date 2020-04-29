@@ -1156,7 +1156,7 @@ PrefabInstance:
     - target: {fileID: 6249534256845899520, guid: b91ba88d5cbaec540beac7b34fe1bf2f,
         type: 3}
       propertyPath: m_text
-      value: Slave Luffy
+      value: Slave Banco
       objectReference: {fileID: 0}
     - target: {fileID: 6249534256845899520, guid: b91ba88d5cbaec540beac7b34fe1bf2f,
         type: 3}
@@ -2074,6 +2074,7 @@ GameObject:
   - component: {fileID: 1762662097}
   - component: {fileID: 1762662099}
   - component: {fileID: 1762662098}
+  - component: {fileID: 1762662100}
   m_Layer: 5
   m_Name: Padlock
   m_TagString: Untagged
@@ -2137,6 +2138,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1762662096}
   m_CullTransparentMesh: 0
+--- !u!225 &1762662100
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762662096}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &2043508091
 GameObject:
   m_ObjectHideFlags: 0

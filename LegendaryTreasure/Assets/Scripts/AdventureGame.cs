@@ -27,18 +27,20 @@ public class AdventureGame : MonoBehaviour
     bool end;
 
 
-    void Start()
+    private void Start()
     {
         pirate = new PirateStats();
         flagNextState = true;
         end = false;
         imageFinder = GameObject.Find("Canvas/Panel/Image");
         state = startingState;
-        storyText.text = state.GetStateStory();
+
+        GameObject introText = GameObject.Find("Intro Frame");
+        introText.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = state.GetStateStory();
     }
 
 
-    void Update()
+    private void Update()
     {
         nextImage = state.GetStateImage();
         ManageState();
@@ -73,7 +75,7 @@ public class AdventureGame : MonoBehaviour
         }
 
 
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) && state.GetSpaceIsActive())
         {
             if(count > 0)
             {
@@ -121,5 +123,10 @@ public class AdventureGame : MonoBehaviour
         statNameText.text = strName;
         statValueText.text = strValue;
         strName = strValue = "";
+    }
+
+    public State GetCurrentState()
+    {
+        return state;
     }
 }

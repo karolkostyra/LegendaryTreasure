@@ -10,12 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b912f27bec8429341989d63156ad1925, type: 3}
-  m_Name: Food
+  m_Name: Food_02
   m_EditorClassIdentifier: 
-  storyText: "You are seriously thirsty. From a few very long days your crew feel
-    more and more hunger, because magazine with supplies is empty. You can not see
-    any land on the horizon. You feel that it won't take too long ...\r\n\r\n[The
-    end]"
+  storyText: "Some plague has covered all your food supplies.\r\nUnfortunately, no
+    one on your ship know about how solve this problem. \r\n\r\nSome die of hunger
+    and others die because of an unknown disease, because they ate something of this
+    poisoned food."
+  choicesText: []
   nextStates: []
-  storyImage: {fileID: 21300000, guid: 9943c259a5c066b48bea44265f21e38d, type: 3}
+  storyImage: {fileID: 21300000, guid: 9b8f8a3a66b9b3e4abd2ebc8db98229b, type: 3}
   dataOfStats: []
+  spaceIsActive: 0

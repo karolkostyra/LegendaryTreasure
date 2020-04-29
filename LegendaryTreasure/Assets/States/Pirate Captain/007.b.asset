@@ -10,9 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b912f27bec8429341989d63156ad1925, type: 3}
-  m_Name: Health_02
+  m_Name: 007.b
   m_EditorClassIdentifier: 
-  storyText: '?'
+  storyText: "Nic si\u0119 nie dzieje, kontynuujecie przygod\u0119"
   nextStates: []
-  storyImage: {fileID: 21300000, guid: f0d900e414f8845449ea436fbf09463b, type: 3}
-  dataOfStats: []
+  storyImage: {fileID: 21300000, guid: dd1e02174f71f064d90eda9d0b3e9acb, type: 3}
+  dataOfStats:
+  - nameOfStat: Food
+    valueOfStat: 15
+  - nameOfStat: Sanity
+    valueOfStat: 15
+  - nameOfStat: Health
+    valueOfStat: 15
+  - nameOfStat: Gold
+    valueOfStat: 15
+  spaceIsActive: 1

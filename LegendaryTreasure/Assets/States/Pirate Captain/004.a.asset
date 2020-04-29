@@ -25,3 +25,4 @@ MonoBehaviour:
     valueOfStat: 15
   - nameOfStat: Gold
     valueOfStat: -20
+  spaceIsActive: 1

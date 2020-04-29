@@ -10,19 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b912f27bec8429341989d63156ad1925, type: 3}
-  m_Name: 002.c
+  m_Name: Health
   m_EditorClassIdentifier: 
-  storyText: "You continue journey...\r\n\r\n{Food:  -5%   Sanity:  +5%   Health:
-    \ 0%   Gold:  0%}\n\n\nPress 'space' to continue..."
+  storyText: "Your body is on the verge of endurance. Neither you and any of your
+    pirates are able to continue this journey. You are exhausted and you feel that
+    you are slowly dying...\r\n\r\n[The end]"
   nextStates: []
-  storyImage: {fileID: 0}
-  dataOfStats:
-  - nameOfStat: Food
-    valueOfStat: -5
-  - nameOfStat: Sanity
-    valueOfStat: 5
-  - nameOfStat: Health
-    valueOfStat: 0
-  - nameOfStat: Gold
-    valueOfStat: 0
-  spaceIsActive: 1
+  storyImage: {fileID: 21300000, guid: 579e56288bc734140bff586bca0c176c, type: 3}
+  dataOfStats: []
+  spaceIsActive: 0

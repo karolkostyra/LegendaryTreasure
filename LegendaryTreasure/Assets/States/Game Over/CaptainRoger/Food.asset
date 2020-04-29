@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b912f27bec8429341989d63156ad1925, type: 3}
-  m_Name: Ending.a
+  m_Name: Food
   m_EditorClassIdentifier: 
-  storyText: "It is peaceful on the island. You sail closer and closer. After a while
-    you started search the whole area. In a few next hours you found the legendary
-    treasure about which only legends preached. You've never seen so many chests full
-    of gold coins and other trinkets.\r\n\r\n[You win!]"
+  storyText: "You are seriously thirsty. From a few very long days your crew feel
+    more and more hunger, because magazine with supplies is empty. You can not see
+    any land on the horizon. You feel that it won't take too long ...\r\n\r\n[The
+    end]"
   nextStates: []
-  storyImage: {fileID: 21300000, guid: 2a43ead713efe7e4d9e0ff6dd11ee140, type: 3}
+  storyImage: {fileID: 21300000, guid: 9943c259a5c066b48bea44265f21e38d, type: 3}
   dataOfStats: []
+  spaceIsActive: 0

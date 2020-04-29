@@ -22,3 +22,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 89b0f990eb8094d42846cbffadedbb97, type: 2}
   storyImage: {fileID: 21300000, guid: 769f94fc00cdac54696ac9b30abf2ffc, type: 3}
   dataOfStats: []
+  spaceIsActive: 0
