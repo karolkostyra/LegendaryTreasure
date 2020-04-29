@@ -15,8 +15,7 @@ MonoBehaviour:
   storyText: "Things got out of hand and drunk pirates did some damage on a ship.
     Probably they won't remember anything tomorrow.\r\n\r\n{Food: -5%   Sanity:  -15%
     \  Health:  -15%   Gold:  0%}"
-  choicesText:
-  - Press 'space' to continue...
+  choicesText: []
   nextStates: []
   storyImage: {fileID: 21300000, guid: 5fc326bb6fe461144b14d408f3e68a20, type: 3}
   dataOfStats:

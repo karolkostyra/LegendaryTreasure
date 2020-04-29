@@ -15,8 +15,7 @@ MonoBehaviour:
   storyText: "The cargo ship crew saw that you don't have bad intentions against them.
     You bought some food and drinking water for a few gold coins.\r\n\r\n{Food: +15%
     \  Sanity:  +5%   Health:  0%   Gold: -15%}"
-  choicesText:
-  - Press 'space' to continue...
+  choicesText: []
   nextStates: []
   storyImage: {fileID: 0}
   dataOfStats:

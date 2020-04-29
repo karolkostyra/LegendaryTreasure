@@ -16,8 +16,7 @@ MonoBehaviour:
     water. In return for leaving the ship's crew alive, you received some gold, rum
     and several precious things.\n\r\n{Food:  +25%   Sanity:  -5%   Health: 0%   Gold:
     \ +15%}"
-  choicesText:
-  - Press 'space' to continue...
+  choicesText: []
   nextStates: []
   storyImage: {fileID: 21300000, guid: 99b41b26d78475441ac923b37f15d823, type: 3}
   dataOfStats:

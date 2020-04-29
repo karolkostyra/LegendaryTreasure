@@ -15,8 +15,7 @@ MonoBehaviour:
   storyText: "Because of your quick reaction less food was covered with water, but
     it took a lot more time and energy to stop the leak.\r\n\r\n{Food:  -5%   Sanity:
     \ -5%   Health:  -10%   Gold:  0%}"
-  choicesText:
-  - Press 'space' to continue...
+  choicesText: []
   nextStates: []
   storyImage: {fileID: 21300000, guid: d13f081ad1902b54fa01cfd07e03f289, type: 3}
   dataOfStats:

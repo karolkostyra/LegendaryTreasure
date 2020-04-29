@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   storyText: "After a few days you reached the shore and stocked up your supplies.\r\n\r\n{Food:
     \ +30%   Sanity:  +10%   Health:  +15%   Gold:  -20%}"
-  choicesText:
-  - Press 'space' to continue...
+  choicesText: []
   nextStates: []
   storyImage: {fileID: 21300000, guid: 4d169ce2aa90ac84fa7cae69c02827b5, type: 3}
   dataOfStats:

@@ -15,8 +15,7 @@ MonoBehaviour:
   storyText: "Drunken pirates were very aggressive, but after a long moment you managed
     to separate them without much problems.\r\n\r\n{Food:  0%   Sanity: +10%   Health:
     \ 0%   Gold:  0%}"
-  choicesText:
-  - Press 'space' to continue...
+  choicesText: []
   nextStates: []
   storyImage: {fileID: 21300000, guid: 5fc326bb6fe461144b14d408f3e68a20, type: 3}
   dataOfStats:

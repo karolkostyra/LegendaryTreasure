@@ -15,8 +15,7 @@ MonoBehaviour:
   storyText: "The crew separated the good food from a bad and threw away everything
     that was spoiled.\r\r\nThe supplies are shrinking.\r\n\n{Food: -30%   Sanity:
     \ +10%  Health: 0%   Gold:  0%}"
-  choicesText:
-  - Press 'space' to continue...
+  choicesText: []
   nextStates: []
   storyImage: {fileID: 21300000, guid: 9943c259a5c066b48bea44265f21e38d, type: 3}
   dataOfStats:

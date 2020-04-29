@@ -55,6 +55,11 @@ public class State : ScriptableObject
         return choicesText.Length;
     }
 
+    public string[] GetChoicesText()
+    {
+        return choicesText;
+    }
+
     public bool GetIntroductionVar()
     {
         return introduction;
