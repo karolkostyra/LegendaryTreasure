@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class ScrollbarSetup : MonoBehaviour
 {
     [SerializeField] private GameObject scrollbar;
+    [SerializeField] private GameObject scrollrect;
+    [SerializeField] private GameObject introductionField;
 
     void Start()
     {
@@ -14,13 +16,20 @@ public class ScrollbarSetup : MonoBehaviour
 
     void Update()
     {
-        //gameObject.GetComponent<RectTransform>().localScale = new Vector3(0, 0, 0);
-
+        AutoAcitvateScrollbar();
     }
-    public void ShowScrollBar()
+
+    private void AutoAcitvateScrollbar()
     {
+        scrollbar.SetActive(introductionField.activeSelf);
+    }
 
-        gameObject.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
-
+    public bool EndOfScroll()
+    {
+        if (scrollrect.GetComponent<ScrollRect>().verticalNormalizedPosition <= 0.05f)
+        {
+            return true;
+        }
+        return false;
     }
 }

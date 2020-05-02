@@ -17,8 +17,7 @@ MonoBehaviour:
     pirate treasure hidden somewhere in the world.\nNo one from his surroundings believed
     in these tales about Legendary Treasure. That was the reason why he decided to
     prove that they are wrong.\r\n\r\nSo your goals are:\r\n- make good decisions\r\n-
-    survive with your crew this adventure\r\n- find the legendary treasure\r\n\r\nPress
-    'space' to start game..."
+    survive with your crew this adventure\r\n- find the legendary treasure\r"
   choicesText: []
   nextStates: []
   storyImage: {fileID: 21300000, guid: 8f22d14dcdb41e6499bb23a0876c6dc3, type: 3}

@@ -6,13 +6,14 @@ using TMPro;
 
 public class StoryField : MonoBehaviour
 {
-    private State state;
     [SerializeField] AdventureGame adventureGame;
+    [SerializeField] ScrollbarSetup scrollbarSetup;
     [SerializeField] GameObject storyText;
     [SerializeField] GameObject introText;
 
     //BUTTONS - currently max 3 choices for state
     [SerializeField] GameObject[] buttons;
+    [SerializeField] GameObject confirmButton;
 
     private RectTransform storyRectTransform;
     private Vector2 storySizeDelta;
@@ -20,9 +21,10 @@ public class StoryField : MonoBehaviour
     private State previousCurrentState;
     private float sizeStoryText;
 
+
     private void Start()
     {
-        DeactivateButtons();
+        DeactivateChoiceButtons();
         storyText.SetActive(false);
         introText.SetActive(false);
 
@@ -31,14 +33,23 @@ public class StoryField : MonoBehaviour
 
         previousCurrentState = adventureGame.GetCurrentState();
     }
-    
+
     private void Update()
     {
         currentState = adventureGame.GetCurrentState();
+        SetupConfirmButton();
         if (currentState.GetIntroductionVar())
         {
             storyText.SetActive(false);
             introText.SetActive(true);
+            if (scrollbarSetup.EndOfScroll())
+            {
+                ConfirmButton(true);
+            }
+            else
+            {
+                ConfirmButton(false);
+            }
         }
         else
         {
@@ -46,65 +57,39 @@ public class StoryField : MonoBehaviour
             storyText.SetActive(true);
         }
 
-        if(previousCurrentState != currentState)
+        if (previousCurrentState != currentState)
         {
             sizeStoryText = storyText.GetComponentInChildren<TextMeshProUGUI>().fontSize;
             CheckNumberOfChoices();
         }
-
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            storyRectTransform = storyText.GetComponent<RectTransform>();
-            storySizeDelta = storyRectTransform.sizeDelta;
-            //Debug.Log(currentState.GetCurrentState().GetNumberOfChoices());
-            storySizeDelta = new Vector2(storySizeDelta.x, 200);
-            CreateButtons(currentState.GetNumberOfChoices());
-        }
-    }
-
-    private void CreateButtons(int numberOfButtons)
-    {
-        for(int i=0; i<numberOfButtons; i++)
-        {
-            GameObject button = new GameObject();
-            button.AddComponent<RectTransform>();
-            button.AddComponent<Button>();
-
-            var panel = GameObject.Find("Canvas");
-            button.transform.position = panel.transform.position;
-            button.transform.position -= new Vector3(0,i*100,0);
-            button.GetComponent<RectTransform>().SetParent(panel.transform);
-            //button.GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 0, 10);
-            button.SetActive(true);
-        } 
     }
 
     private void CheckNumberOfChoices()
     {
-        DeactivateButtons();
+        DeactivateChoiceButtons();
         previousCurrentState = currentState;
         switch (currentState.GetNumberOfChoices())
         {
             case 0:
                 Debug.Log("Space");
-                ConfirmButton();
+                ConfirmButton(true);
                 break;
             case 1:
                 Debug.Log("1");
-                ActivateButtons(1);
+                ActivateChoiceButtons(1);
                 break;
             case 2:
                 Debug.Log("2");
-                ActivateButtons(2);
+                ActivateChoiceButtons(2);
                 break;
             case 3:
                 Debug.Log("3");
-                ActivateButtons(3);
+                ActivateChoiceButtons(3);
                 break;
         }
     }
 
-    private void ActivateButtons(int value)
+    private void ActivateChoiceButtons(int value)
     {
         var choices = currentState.GetChoicesText();
 
@@ -116,20 +101,32 @@ public class StoryField : MonoBehaviour
         }
     }
 
-    private void DeactivateButtons()
+    private void DeactivateChoiceButtons()
     {
-        buttons[1].GetComponentInChildren<TextMeshProUGUI>().alignment = TMPro.TextAlignmentOptions.Left;
-
         for(int i=0; i < buttons.Length; i++)
         {
             buttons[i].SetActive(false);
         }
     }
 
-    private void ConfirmButton()
+    private void SetupConfirmButton()
     {
-        buttons[1].SetActive(true);
-        buttons[1].GetComponentInChildren<TextMeshProUGUI>().alignment = TMPro.TextAlignmentOptions.Center;
-        buttons[1].GetComponentInChildren<TextMeshProUGUI>().text = "Press 'space' or click here to continue...";
+        float textSize;
+        if(storyText.activeSelf == false)
+        {
+            textSize = introText.GetComponentInChildren<TextMeshProUGUI>().fontSize;
+        }
+        else
+        {
+            textSize = storyText.GetComponentInChildren<TextMeshProUGUI>().fontSize;
+        }
+        confirmButton.GetComponentInChildren<TextMeshProUGUI>().fontSize = textSize;
+        confirmButton.GetComponentInChildren<TextMeshProUGUI>().alignment = TMPro.TextAlignmentOptions.Center;
+        confirmButton.GetComponentInChildren<TextMeshProUGUI>().text = "Press 'space' or click here to continue...";
+    }
+
+    private void ConfirmButton(bool flag)
+    {
+        confirmButton.SetActive(flag);
     }
 }
