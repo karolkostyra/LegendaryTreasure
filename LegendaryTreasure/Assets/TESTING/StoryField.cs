@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class SetupStoryField : MonoBehaviour
+public class StoryField : MonoBehaviour
 {
     private State state;
     [SerializeField] AdventureGame adventureGame;
@@ -20,7 +20,7 @@ public class SetupStoryField : MonoBehaviour
     private State previousCurrentState;
     private float sizeStoryText;
 
-    private void Start() //-153 / 434
+    private void Start()
     {
         DeactivateButtons();
         storyText.SetActive(false);
@@ -118,19 +118,18 @@ public class SetupStoryField : MonoBehaviour
 
     private void DeactivateButtons()
     {
-        //buttons[1].GetComponent<HorizontalLayoutGroup>().childAlignment = TextAnchor.UpperLeft;
         buttons[1].GetComponentInChildren<TextMeshProUGUI>().alignment = TMPro.TextAlignmentOptions.Left;
-        buttons[0].SetActive(false);
-        buttons[1].SetActive(false);
-        buttons[2].SetActive(false);
+
+        for(int i=0; i < buttons.Length; i++)
+        {
+            buttons[i].SetActive(false);
+        }
     }
 
     private void ConfirmButton()
     {
-        //if(!currentState.GetIntroductionVar())
         buttons[1].SetActive(true);
-        //buttons[1].GetComponent<HorizontalLayoutGroup>().childAlignment = TextAnchor.MiddleCenter;
         buttons[1].GetComponentInChildren<TextMeshProUGUI>().alignment = TMPro.TextAlignmentOptions.Center;
-        buttons[1].GetComponentInChildren<TextMeshProUGUI>().text = "Press 'space' to continue...";
+        buttons[1].GetComponentInChildren<TextMeshProUGUI>().text = "Press 'space' or click here to continue...";
     }
 }
