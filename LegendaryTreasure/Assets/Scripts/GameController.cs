@@ -31,7 +31,7 @@ public class GameController : MonoBehaviour
     private void Start()
     {
         pirate = new PirateStats();
-        flagNextState = true;
+        SetFlagNextState(true);
         flagSkipIntro = false;
         end = false;
         imageFinder = GameObject.Find("Canvas/Panel/Image");
@@ -40,7 +40,6 @@ public class GameController : MonoBehaviour
         GameObject introText = GameObject.Find("Intro Frame");
         introText.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = state.GetStateStory();
     }
-
 
     private void Update()
     {
@@ -54,8 +53,7 @@ public class GameController : MonoBehaviour
         }
     }
 
-
-    private void ManageState()
+    public void ManageState(int numberTest = 0)
     {
         var nextStates = state.GetNextStates();
         count = myStates.Count;
@@ -67,27 +65,32 @@ public class GameController : MonoBehaviour
             {
                 pirate.pirateStatistics[nextStat[i].nameOfStat] += nextStat[i].valueOfStat;
             }
-            flagNextState = false;
+            SetFlagNextState(false);
         }
 
         for (int i = 0; i < nextStates.Length; i++)
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1 + i))
+            if (numberTest == 0 && Input.GetKeyDown(KeyCode.Alpha1 + i))
             {
                 state = nextStates[i];
-                flagNextState = true;
+                SetFlagNextState(true);
+            }
+            else if(numberTest != 0)
+            {
+                state = nextStates[numberTest-1];
+                SetFlagNextState(true);
             }
         }
 
-        if(Input.GetKeyDown(KeyCode.Space) && state.GetSpaceIsActive() && flagSkipIntro)
+        if (Input.GetKeyDown(KeyCode.Space) && state.GetSpaceIsActive() && flagSkipIntro)
         {
-            if(count > 0)
+            if (count > 0)
             {
                 state = myStates[UnityEngine.Random.Range(0, count)];
                 myStates.Remove(state);
             }
 
-            if(count == 0 & !end)
+            if (count == 0 & !end)
             {
                 state = endingState;
                 end = true;
@@ -128,10 +131,10 @@ public class GameController : MonoBehaviour
         statValueText.text = strValue;
         strName = strValue = "";
     }
-
-    public void ManageStateByButtons()
+    
+    private void SetFlagNextState(bool flag)
     {
-
+        flagNextState = flag;
     }
 
     public State GetCurrentState()

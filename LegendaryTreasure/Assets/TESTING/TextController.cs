@@ -26,6 +26,7 @@ public class TextController : MonoBehaviour
     private void Start()
     {
         DeactivateChoiceButtons();
+        ConfirmButton(false);
         storyText.SetActive(false);
         introText.SetActive(false);
 
@@ -46,10 +47,6 @@ public class TextController : MonoBehaviour
             if (introScrollbar.EndOfScroll())
             {
                 ConfirmButton(true);
-            }
-            else
-            {
-                ConfirmButton(false);
             }
         }
         else
@@ -131,5 +128,10 @@ public class TextController : MonoBehaviour
     private void ConfirmButton(bool flag)
     {
         confirmButton.SetActive(flag);
+    }
+
+    public void ManageByButton(int button_number)
+    {
+        gameController.ManageState(button_number);
     }
 }
