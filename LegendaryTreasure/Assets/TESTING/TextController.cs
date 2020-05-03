@@ -4,10 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class StoryField : MonoBehaviour
+public class TextController : MonoBehaviour
 {
-    [SerializeField] AdventureGame adventureGame;
-    [SerializeField] ScrollbarSetup scrollbarSetup;
+    [SerializeField] GameController gameController;
+    [SerializeField] ScrollbarSetup introScrollbar;
+    [SerializeField] ScrollbarSetup storyScrollbar;
     [SerializeField] GameObject storyText;
     [SerializeField] GameObject introText;
 
@@ -31,18 +32,18 @@ public class StoryField : MonoBehaviour
         storyRectTransform = storyText.GetComponent<RectTransform>();
         storySizeDelta = storyRectTransform.sizeDelta;
 
-        previousCurrentState = adventureGame.GetCurrentState();
+        previousCurrentState = gameController.GetCurrentState();
     }
 
     private void Update()
     {
-        currentState = adventureGame.GetCurrentState();
+        currentState = gameController.GetCurrentState();
         SetupConfirmButton();
         if (currentState.GetIntroductionVar())
         {
             storyText.SetActive(false);
             introText.SetActive(true);
-            if (scrollbarSetup.EndOfScroll())
+            if (introScrollbar.EndOfScroll())
             {
                 ConfirmButton(true);
             }
@@ -61,6 +62,8 @@ public class StoryField : MonoBehaviour
         {
             sizeStoryText = storyText.GetComponentInChildren<TextMeshProUGUI>().fontSize;
             CheckNumberOfChoices();
+            ConfirmButton(false);
+            storyScrollbar.SetPosition(1);
         }
     }
 

@@ -7,21 +7,20 @@ public class ScrollbarSetup : MonoBehaviour
 {
     [SerializeField] private GameObject scrollbar;
     [SerializeField] private GameObject scrollrect;
-    [SerializeField] private GameObject introductionField;
 
     void Start()
     {
-        scrollbar.GetComponent<Scrollbar>().value = 1;
+        SetPosition(1);
     }
 
     void Update()
     {
-        AutoAcitvateScrollbar();
+        AutoAcitvateScrollbar(scrollrect);
     }
 
-    private void AutoAcitvateScrollbar()
+    private void AutoAcitvateScrollbar(GameObject obj)
     {
-        scrollbar.SetActive(introductionField.activeSelf);
+        scrollbar.SetActive(obj.activeSelf);
     }
 
     public bool EndOfScroll()
@@ -31,5 +30,10 @@ public class ScrollbarSetup : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    public void SetPosition(int value)
+    {
+        scrollbar.GetComponent<Scrollbar>().value = value;
     }
 }

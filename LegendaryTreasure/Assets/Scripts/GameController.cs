@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using TMPro;
 
 
-public class AdventureGame : MonoBehaviour
+public class GameController : MonoBehaviour
 {
     PirateStats pirate;
     string strName, strValue;
@@ -13,8 +13,8 @@ public class AdventureGame : MonoBehaviour
     [SerializeField] TextMeshProUGUI statValueText;
     [SerializeField] TextMeshProUGUI storyText;
     [SerializeField] State startingState;
-    //[SerializeField] State instructionState;
     [SerializeField] State endingState;
+    [SerializeField] ScrollbarSetup introScrollbar;
     [SerializeField] State[] defeatConditions;
 
     Sprite nextImage;
@@ -23,6 +23,7 @@ public class AdventureGame : MonoBehaviour
 
     public List<State> myStates;
     bool flagNextState;
+    bool flagSkipIntro;
     int count;
     bool end;
 
@@ -31,6 +32,7 @@ public class AdventureGame : MonoBehaviour
     {
         pirate = new PirateStats();
         flagNextState = true;
+        flagSkipIntro = false;
         end = false;
         imageFinder = GameObject.Find("Canvas/Panel/Image");
         state = startingState;
@@ -45,6 +47,11 @@ public class AdventureGame : MonoBehaviour
         nextImage = state.GetStateImage();
         ManageState();
         ManageStatistics();
+
+        if (state.GetIntroductionVar() && introScrollbar.EndOfScroll())
+        {
+            flagSkipIntro = true;
+        }
     }
 
 
@@ -52,7 +59,6 @@ public class AdventureGame : MonoBehaviour
     {
         var nextStates = state.GetNextStates();
         count = myStates.Count;
-
 
         var nextStat = state.GetImpactOnStats();
         if (state.GetImpactOnStats().Length == 4 & flagNextState)
@@ -64,7 +70,6 @@ public class AdventureGame : MonoBehaviour
             flagNextState = false;
         }
 
-
         for (int i = 0; i < nextStates.Length; i++)
         {
             if (Input.GetKeyDown(KeyCode.Alpha1 + i))
@@ -74,8 +79,7 @@ public class AdventureGame : MonoBehaviour
             }
         }
 
-
-        if(Input.GetKeyDown(KeyCode.Space) && state.GetSpaceIsActive())
+        if(Input.GetKeyDown(KeyCode.Space) && state.GetSpaceIsActive() && flagSkipIntro)
         {
             if(count > 0)
             {
@@ -123,6 +127,11 @@ public class AdventureGame : MonoBehaviour
         statNameText.text = strName;
         statValueText.text = strValue;
         strName = strValue = "";
+    }
+
+    public void ManageStateByButtons()
+    {
+
     }
 
     public State GetCurrentState()
