@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class TextController : MonoBehaviour
+public class TextAndButtonController : MonoBehaviour
 {
     [SerializeField] GameController gameController;
     [SerializeField] ScrollbarSetup introScrollbar;
@@ -57,7 +57,6 @@ public class TextController : MonoBehaviour
 
         if (previousCurrentState != currentState)
         {
-            Debug.Log("ZMIANA!");
             sizeStoryText = storyText.GetComponentInChildren<TextMeshProUGUI>().fontSize;
             ConfirmButton(false);
             CheckNumberOfChoices();

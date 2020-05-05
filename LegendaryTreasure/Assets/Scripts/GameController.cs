@@ -44,7 +44,7 @@ public class GameController : MonoBehaviour
     private void Update()
     {
         nextImage = state.GetStateImage();
-        ManageState();
+        ManageState(-1);
         ManageStatistics();
 
         if (state.GetIntroductionVar() && introScrollbar.EndOfScroll())
@@ -70,7 +70,7 @@ public class GameController : MonoBehaviour
 
         for (int i = 0; i < nextStates.Length; i++)
         {
-            if (numberTest == 0 && Input.GetKeyDown(KeyCode.Alpha1 + i))
+            if (numberTest < 0 && Input.GetKeyDown(KeyCode.Alpha1 + i))
             {
                 state = nextStates[i];
                 SetFlagNextState(true);
