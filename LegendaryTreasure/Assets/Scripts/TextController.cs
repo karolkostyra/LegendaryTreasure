@@ -15,8 +15,7 @@ public class TextController : MonoBehaviour
     //BUTTONS - currently max 3 choices for state
     [SerializeField] GameObject[] buttons;
     [SerializeField] GameObject confirmButton;
-
-    private RectTransform storyRectTransform;
+    
     private Vector2 storySizeDelta;
     private State currentState;
     private State previousCurrentState;
@@ -30,7 +29,7 @@ public class TextController : MonoBehaviour
         storyText.SetActive(false);
         introText.SetActive(false);
 
-        storyRectTransform = storyText.GetComponent<RectTransform>();
+        RectTransform storyRectTransform = storyText.GetComponent<RectTransform>();
         storySizeDelta = storyRectTransform.sizeDelta;
 
         previousCurrentState = gameController.GetCurrentState();
@@ -39,13 +38,14 @@ public class TextController : MonoBehaviour
     private void Update()
     {
         currentState = gameController.GetCurrentState();
-        SetupConfirmButton();
+        //SetupConfirmButton();
         if (currentState.GetIntroductionVar())
         {
             storyText.SetActive(false);
             introText.SetActive(true);
             if (introScrollbar.EndOfScroll())
             {
+                SetupConfirmButton();
                 ConfirmButton(true);
             }
         }
@@ -57,9 +57,10 @@ public class TextController : MonoBehaviour
 
         if (previousCurrentState != currentState)
         {
+            Debug.Log("ZMIANA!");
             sizeStoryText = storyText.GetComponentInChildren<TextMeshProUGUI>().fontSize;
-            CheckNumberOfChoices();
             ConfirmButton(false);
+            CheckNumberOfChoices();
             storyScrollbar.SetPosition(1);
         }
     }
@@ -72,6 +73,7 @@ public class TextController : MonoBehaviour
         {
             case 0:
                 Debug.Log("Space");
+                SetupConfirmButton();
                 ConfirmButton(true);
                 break;
             case 1:

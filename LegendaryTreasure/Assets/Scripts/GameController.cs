@@ -53,7 +53,7 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void ManageState(int numberTest = 0)
+    public void ManageState(int numberTest = -1)
     {
         var nextStates = state.GetNextStates();
         count = myStates.Count;
@@ -75,14 +75,14 @@ public class GameController : MonoBehaviour
                 state = nextStates[i];
                 SetFlagNextState(true);
             }
-            else if(numberTest != 0)
+            else if(numberTest > 0)
             {
                 state = nextStates[numberTest-1];
                 SetFlagNextState(true);
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && state.GetSpaceIsActive() && flagSkipIntro)
+        if ((Input.GetKeyDown(KeyCode.Space) || numberTest == 0) && state.GetSpaceIsActive() && flagSkipIntro)
         {
             if (count > 0)
             {
