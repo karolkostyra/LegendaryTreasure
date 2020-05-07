@@ -15,7 +15,11 @@ public class GameController : MonoBehaviour
     [SerializeField] State startingState;
     [SerializeField] State endingState;
     [SerializeField] ScrollbarSetup introScrollbar;
-    [SerializeField] State[] defeatConditions;
+    [SerializeField] List<State> defeatConditions;
+    //[SerializeField] State[] defeatConditions;
+
+    [SerializeField] List<State> defeatStates = new List<State>();
+    [SerializeField] List<int> defeatValues = new List<int>();
 
     Sprite nextImage;
     GameObject imageFinder;
@@ -24,6 +28,7 @@ public class GameController : MonoBehaviour
     public List<State> myStates;
     bool flagNextState;
     bool flagSkipIntro;
+    bool updateStatistics;
     int count;
     bool end;
 
@@ -33,19 +38,24 @@ public class GameController : MonoBehaviour
         pirate = new PirateStats();
         SetFlagNextState(true);
         flagSkipIntro = false;
+        updateStatistics = true;
         end = false;
         imageFinder = GameObject.Find("Canvas/Panel/Image");
         state = startingState;
 
-        GameObject introText = GameObject.Find("Intro Frame");
-        introText.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = state.GetStateStory();
+        GameObject introHandler = GameObject.Find("Intro Frame");
+        TextMeshProUGUI introText = introHandler.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        introText.text = state.GetStateStory();
     }
 
     private void Update()
     {
         nextImage = state.GetStateImage();
         ManageState(-1);
-        ManageStatistics();
+        if (updateStatistics)
+        {
+            ManageStatistics();
+        }
 
         if (state.GetIntroductionVar() && introScrollbar.EndOfScroll())
         {
@@ -80,6 +90,7 @@ public class GameController : MonoBehaviour
                 state = nextStates[numberTest-1];
                 SetFlagNextState(true);
             }
+            updateStatistics = true;
         }
 
         if ((Input.GetKeyDown(KeyCode.Space) || numberTest == 0) && state.GetSpaceIsActive() && flagSkipIntro)
@@ -95,8 +106,8 @@ public class GameController : MonoBehaviour
                 state = endingState;
                 end = true;
             }
+            updateStatistics = true;
         }
-
         storyText.text = state.GetStateStory();
         var setImage = imageFinder.GetComponent<Image>();
         setImage.sprite = nextImage;
@@ -105,6 +116,9 @@ public class GameController : MonoBehaviour
 
     private void ManageStatistics()
     {
+        //List<State> defeatStates = new List<State>();
+        //List<int> defeatValues = new List<int>();
+
         int i = 0;
         foreach(var item in pirate.pirateStatistics)
         {
@@ -117,19 +131,54 @@ public class GameController : MonoBehaviour
             {
                 strName += item.Key + ": \n";
                 strValue += item.Value + "%\n";
-                state = defeatConditions[i];
-                storyText.text = state.GetStateStory();
+                //
+                defeatStates.Add(defeatConditions[i]);
+                defeatValues.Add(item.Value);
+                Debug.Log("INDEX: " + (i));
+                //defeatConditions.Remove(defeatConditions[i]);
+                //state = defeatConditions[i];
+                //storyText.text = state.GetStateStory();
             }
-            if(item.Value >= 100)
+            else if(item.Value >= 100)
             {
-                state = defeatConditions[i+3];
-                storyText.text = state.GetStateStory();
+                //
+                defeatStates.Add(defeatConditions[i+4]);
+                defeatValues.Add(item.Value);
+                Debug.Log("INDEX: " + (i + 4));
+                //defeatConditions.Remove(defeatConditions[i+3]);
+                //state = defeatConditions[i+3];
+                //storyText.text = state.GetStateStory();
             }
             i++;
         }
         statNameText.text = strName;
         statValueText.text = strValue;
         strName = strValue = "";
+        ChooseDefeatCondition(defeatStates, defeatValues);
+        updateStatistics = false;
+    }
+
+    private void ChooseDefeatCondition(List<State> states, List<int> values)
+    {
+        if(states.Count == 0)
+        {
+            return;
+        }
+
+        int max = Mathf.Abs(50 - values[0]);
+        int index = 0;
+
+        for(int i=1; i<values.Count; i++)
+        {
+            if (Mathf.Abs(50 - values[i]) > max)
+            {
+                max = values[i];
+                index = i;
+            }
+        }
+        Debug.Log("WARTOSC: " + max);
+        state = states[index];
+        storyText.text = state.GetStateStory();
     }
     
     private void SetFlagNextState(bool flag)

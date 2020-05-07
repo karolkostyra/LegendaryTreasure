@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b912f27bec8429341989d63156ad1925, type: 3}
   m_Name: Gold_02
   m_EditorClassIdentifier: 
-  storyText: '?'
+  storyText: gold 02
+  choicesText: []
   nextStates: []
   storyImage: {fileID: 21300000, guid: f0d900e414f8845449ea436fbf09463b, type: 3}
   dataOfStats: []
   spaceIsActive: 0
+  introduction: 0
