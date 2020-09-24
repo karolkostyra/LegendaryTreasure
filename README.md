@@ -16,6 +16,8 @@ This is only prototype, not a complete game. Nevertheless it is playable and con
 
 </br>
 
+:arrow_forward:[Game presentation video](https://www.youtube.com/watch?v=N96sBgAQ3mg)
+</br>
 :arrow_forward:[My youtube channel](https://www.youtube.com/channel/UCRCIp_j5MIfofgcc05LEoXg)
 
 </br>
